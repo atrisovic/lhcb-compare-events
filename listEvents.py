@@ -26,6 +26,7 @@ for _ in range(numberOfEvents):
     #MCParticles = evt['/Event/Sim/MCParticles']
 
     f.write("Run number Event number " + ' '.join([str(evtheader.runNumber()), str(evtheader.evtNumber())]))
+    f.write('\n')
     for t in tracks:
         f.write(' '.join([str(t.p()), str(t.pt()), str(t.lhcbIDs().size())]))
         f.write('\n'.join([str(i.lhcbID()) for i in t.lhcbIDs()]))
